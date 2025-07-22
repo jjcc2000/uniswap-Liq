@@ -1,4 +1,4 @@
-// import TopPairs from "./components/TopPairs";
+import TopPairs from "./components/TopPairs";
 import ETHDAIChart from "./components/ETHDAIChart";
 import "./App.css";
 
@@ -8,9 +8,11 @@ function App() {
       <h1 className="text-2xl font-bold mb-6 text-center">
         📊 Uniswap Dashboard
       </h1>
-      {/* <TopPairs /> */}
-      <ETHDAIChart />
-    </div> 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <TopPairs />
+        <ETHDAIChart />
+      </div>
+    </div>
   );
 }
 

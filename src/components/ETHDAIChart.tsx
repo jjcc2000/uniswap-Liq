@@ -23,23 +23,35 @@ const ETHDAIChart = () => {
     }))
     .reverse();
   console.log(chartData);
-
   return (
-    <div className="p-4 bg-white rounded-xl shadow mt-6">
-      <h2 className="text-xl font-semibold mb-4">ETH/DAI Price (Last 24h)</h2>
-      <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={chartData}>
-          <XAxis dataKey="time" />
-          <YAxis domain={["auto", "auto"]} />
-          <Tooltip />
-          <Line
-            type="monotone"
-            dataKey="price"
-            stroke="#3b82f6"
-            strokeWidth={2}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+    <div className="grid justify-end p-4">
+      <div className="w-[360px] bg-white rounded-xl shadow p-4">
+        <h2 className="text-lg font-semibold mb-2 text-right">ETH/DAI (24h)</h2>
+        <ResponsiveContainer width="100%" height={220}>
+          <LineChart data={chartData}>
+            <XAxis
+              dataKey="time"
+              tick={{ fontSize: 10 }}
+              tickLine={false}
+              axisLine={false}
+            />
+            <YAxis
+              domain={["auto", "auto"]}
+              tick={{ fontSize: 10 }}
+              tickLine={false}
+              axisLine={false}
+            />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="price"
+              stroke="#3b82f6"
+              strokeWidth={2}
+              dot={false}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };

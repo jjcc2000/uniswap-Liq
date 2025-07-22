@@ -12,8 +12,8 @@ const TopPairs = () => {
   console.log(data);
 
   return (
-    <div className="p-4 bg-black text-white shadow rounded-xl w-full max-w-2xl mx-auto">
-      <h2 className="text-xl md:text-2xl font-bold mb-4 text-center md:text-left">
+    <div className="p-4 bg-black text-white shadow rounded-xl w-full max-w-2xl">
+      <h2 className="text-xl md:text-2xl font-bold mb-4 text-left">
         Top Pairs by Volume
       </h2>
       <ul className="space-y-4">
@@ -25,7 +25,7 @@ const TopPairs = () => {
             <span className="text-base md:text-lg font-medium">
               {i + 1}. {pair.token0.symbol}/{pair.token1.symbol}
             </span>
-            <div className="mt-2 sm:mt-0 text-sm md:text-base text-gray-300 text-right">
+            <div className="mt-2 sm:mt-0 text-sm md:text-base text-gray-300 text-right sm:text-right">
               <p>Volume: ${parseFloat(pair.volumeUSD).toFixed(2)}</p>
               <p className="text-xs text-gray-500">
                 Liquidity: ${parseFloat(pair.reserveUSD).toFixed(2)}
