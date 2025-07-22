@@ -9,19 +9,24 @@ const TopPairs = () => {
   if (loading) return <p className="text-gray-400">Loading...</p>;
   if (error) return <p className="text-red-500">Error: {error.message}</p>;
 
+  console.log(data);
+
   return (
-    <div className="p-4 bg-white shadow rounded-xl">
-      <h2 className="text-xl font-bold mb-4">Top Pairs by Volume</h2>
-      <ul className="space-y-3">
+    <div className="p-4 bg-black text-white shadow rounded-xl w-full max-w-2xl mx-auto">
+      <h2 className="text-xl md:text-2xl font-bold mb-4 text-center md:text-left">
+        Top Pairs by Volume
+      </h2>
+      <ul className="space-y-4">
         {data.pairs.map((pair: any, i: number) => (
-          <li key={pair.id} className="flex justify-between items-center">
-            <span>
+          <li
+            key={pair.id}
+            className="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-gray-900 p-3 rounded-lg"
+          >
+            <span className="text-base md:text-lg font-medium">
               {i + 1}. {pair.token0.symbol}/{pair.token1.symbol}
             </span>
-            <div className="text-right">
-              <p className="text-sm text-gray-700">
-                Volume: ${parseFloat(pair.volumeUSD).toFixed(2)}
-              </p>
+            <div className="mt-2 sm:mt-0 text-sm md:text-base text-gray-300 text-right">
+              <p>Volume: ${parseFloat(pair.volumeUSD).toFixed(2)}</p>
               <p className="text-xs text-gray-500">
                 Liquidity: ${parseFloat(pair.reserveUSD).toFixed(2)}
               </p>

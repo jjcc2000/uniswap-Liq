@@ -1,7 +1,8 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-    uri: "/subgraph/subgraphs/name/uniswap/uniswap-v2", // now uses local proxy
+    uri: "http://localhost:4000/subgraph", // goes through local proxy
     cache: new InMemoryCache(),
 });
+
 export default client;
